@@ -1,0 +1,14 @@
+#!/bin/bash
+apt-get install cmake -y
+apt-get install screen wget gcc build-essential g++ make -y
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/badvpn/badvpn-1.999.128.tar.bz2
+tar xf badvpn-1.999.128.tar.bz2
+cd badvpn-1.999.128/
+cmake ~/badvpn-1.999.128 -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1
+make install
+echo "paleistas BadVPN portu 7300"
+badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &
+rm /root/badupd
+echo "Badupd sekmingai irasytas!!"
+echo "Buk_laisvas HS_pro 2019"
+
